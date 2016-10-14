@@ -16,3 +16,6 @@ RANSOMWARE
 
 
 Any suggestion to add more are welcome. 
+
+You can replace the /opt/qradar/conf/ip_context_menu.xml with the one listed here and  
+you are good to go. 
