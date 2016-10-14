@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+This is a configuration file to add custom actions into the IP address right-click menu.
+
+Entries must be of one of the following formats:
+
+	<menuEntry name="{Name}" description="{Description}" url="{URL}" requiredCapabilities="{Required Capabilities}"/>
+	<menuEntry name="{Name}" description="{Description}" exec="{Command}" requiredCapabilities="{Required Capabilities}"/>
+	
+The available fields are described as follows:
+
+	Name 								The name of the entry. This is the text that will be displayed in the right-click menu
+	
+	Description (Optional) 				The description of the entry. This is the text that will be displayed in the tooltip of the entry
+	
+	URL 								A web address to open in a new window. You should use the placeholder %IP% in this field to refer
+										to the IP address that is being right-clicked.
+		  
+	Command								A command that should be executed on the console. The output of the command will be displayed in
+										a new window. You should use the placeholder %IP% in this field to refer to the IP address that
+										is being right-clicked.
+			  
+	Required Capabilities (Optional)	Any capabilities the user is required to have in order to access this option, comma-delimited.
+										(for example, "ADMIN"). If the logged-in user does not have all capabilities listed, the entry
+										will not appear. 
+
+To add your entries into the right-click menu, simply copy this file into /opt/qradar/conf and
+restart tomcat.
+-->
+<contextMenu>
+        <menuEntry name="X-Force Exchange Lookup" url="https://exchange.xforce.ibmcloud.com/#/ip/%IP%" />
+	<menuEntry name="IPVOID Check" url="http://www.ipvoid.com/scan/%IP%/"/>
+	<menuEntry name="Dshield" url="http://dshield.org/ipinfo.html?ip=%IP%"/>
+	<menuEntry name="MultiRBL" url="http://multirbl.valli.org/lookup/%IP%.html"/>
+	<menuEntry name="SenderBase" url="http://www.senderbase.org/lookup/?search_string=%IP%"/>
+	<menuEntry name="Zeus_Tracker" url="https://zeustracker.abuse.ch/monitor.php?search=%IP%"/>
+	<menuEntry name="Ransomware_Tracker" url="https://ransomwaretracker.abuse.ch/tracker/?search=%IP%"/>
+	<menuEntry name="Mcafee_IP" url="http://www.mcafee.com/threat-intelligence/ip/default.aspx?ip=%IP%"/>
+
+</contextMenu>
